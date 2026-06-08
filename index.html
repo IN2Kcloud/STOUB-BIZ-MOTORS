@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STOUB BIZ MOTORS</title>
+  <meta name="description" content="cars." />
+  <meta name="keywords" content="cars, road, highway, lights, speed" />
+  <meta name="author" content="EL-KABOOS" />
+  <link rel="shortcut icon" href="./assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.typekit.net/uok8swb.css">
+  <link rel="stylesheet" href="base.css">
+  <script type="module" src="https://unpkg.com/three@0.160.0/build/three.module.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="before-load">
+  <div class="loading">
+    <div class="shutter-top"><!--<canvas class="noise-canvas"></canvas>--></div>
+    <div class="shutter-bottom"><!--<canvas class="noise-canvas"></canvas>--></div>
+    <div class="loading-content">
+      <div class="load-counter"></div>
+      <div class="load-bar-container">
+          <div class="load-bar"></div>
+      </div>
+      <div class="load-status">STOUB BIZ CHECK: ENGINE START</div>
+    </div>
+  </div>
+
+  <canvas id="grid-bg"></canvas>
+  
+  <div class="LP">
+    
+    <div class="screen-bg"></div>
+    <div class="screen-view">
+      <div class="screen-video" aria-hidden="true">
+        <video id="screen-video-wrapper" autoplay muted playsinline loop preload="metadata" webkit-playsinline poster="./assets/logo.svg">
+          <source src="./assets/SBM.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  
+    <div class="marquee-wrapper desktop-only">
+        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="dsmsvg">
+          <defs>
+            <path id="path43" d="M 150,150 L 650,150 L 650,450 L 150,450 Z" />
+            <mask id="cornerMask">
+              <rect x="0" y="0" width="800" height="600" fill="white" />
+              <g fill="black" filter="url(#blurFilter)">
+                <circle cx="150" cy="150" r="70" /> <circle cx="650" cy="150" r="70" /> 
+                <circle cx="650" cy="450" r="70" /> <circle cx="150" cy="450" r="70" /> 
+              </g>
+              <filter id="blurFilter"><feGaussianBlur stdDeviation="15" /></filter>
+            </mask> 
+          </defs>
+          <use href="#path43" fill="none" stroke="#fff" stroke-width="20" />
+          <text fill="#fff" font-family="'American', 'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="18" font-weight="regular" letter-spacing="5" dy="-15" mask="url(#cornerMask)">
+            <textPath class="marquee-path" href="#path43" startOffset="0%">
+              Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
+            </textPath>
+          </text>
+        </svg>
+    </div>
+    <div class="marquee-wrapper mobile-only">
+        <svg viewBox="0 0 600 800" preserveAspectRatio="xMidYMid meet" class="msmsvg">
+          <defs>
+            <path id="path34" d="M 100,100 L 500,100 L 500,700 L 100,700 Z" />
+            <mask id="cornerMaskMobile">
+              <rect x="0" y="0" width="600" height="800" fill="white" />
+              <g fill="black" filter="url(#blurFilterMobile)">
+                <circle cx="100" cy="100" r="70" /> <circle cx="500" cy="100" r="70" /> 
+                <circle cx="500" cy="700" r="70" /> <circle cx="100" cy="700" r="70" /> 
+              </g>
+              <filter id="blurFilterMobile"><feGaussianBlur stdDeviation="15" /></filter>
+            </mask> 
+          </defs>
+          <use href="#path34" fill="none" stroke="#fff" stroke-width="15" />
+          <text fill="#fff" font-family="'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="32" font-weight="bold" dy="-15" mask="url(#cornerMaskMobile)">
+            <textPath class="marquee-path" href="#path34" startOffset="0%">
+              Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
+            </textPath>
+          </text>
+        </svg>
+    </div>
+    
+    <div class="marquee-trial-II">
+      <div class="marquee-trial-content-II">
+        <span>
+            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+            &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
+            you can't download the experience &nbsp;
+        </span>
+      </div>
+    </div>
+	  <div class="marquee-trial">
+      <div class="marquee-trial-content">
+        <span>
+            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+            &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
+            you can't download the experience &nbsp;
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section right">
+    <div class="content-inner">
+      <h2>Precision Engineering <span>Engineering</span> </h2>
+      <p> • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation&nbsp;</p>
+    </div>
+  </section>
+  
+  <section class="content-section left">
+    <div class="content-inner">
+      <h2>Unmatched Collection <span>Collection</span> </h2>
+      <p> • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary&nbsp;</p>
+    </div>
+  </section>
+  
+  <section class="content-section right last">
+    <div class="content-inner">
+      <h2>Global Reach <span>Reach</span> </h2>
+      <p> • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world&nbsp;</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <h2>STOUB BIZ <span>Motors</span></h2>
+      <p> • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved&nbsp;</p>
+    </div>
+  </footer>
+
+
+  <!--MENU-->
+  <div class="menu-toggle closed">
+    <div class="menu-toggle-icon">
+      <div class="hamburger">
+        <div class="menu-bar" data-position="top"></div>
+        <div class="menu-bar" data-position="bottom"></div>
+      </div>
+    </div>
+    <div class="menu-copy">
+      <span class="menu-bg"></span>
+      <p>Start</p>
+    </div>
+  </div>
+  <div class="menu">
+    <!--
+    <div class="menu-logo">
+        <a href="#">VIP motors</a>
+    </div>
+    -->
+    <div class="menu-wrap">
+      <nav class="menu-nav">
+        <div class="menu__item">
+            <a class="menu__item-link" href="" target="_blank">COLLECTION</a>
+            <div class="marquee">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner" aria-hidden="true">
+                        <span>Defining the pinnacle of automotive engineering •</span>
+                        <span>An unrivaled selection of the world's most prestigious marques •</span>
+                        <span>Defining the pinnacle of automotive engineering •</span>
+                        <span>An unrivaled selection of the world's most prestigious marques •</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu__item">
+            <a class="menu__item-link" href="" target="_blank">CONSIGNMENT</a>
+            <div class="marquee">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner" aria-hidden="true">
+                        <span>DISCRETE ACQUISITIONS - GLOBAL REACH •</span>
+                        <span>OFF-MARKET TRANSACTIONS FOR DISCERNING COLLECTORS •</span>
+                        <span>DISCRETE ACQUISITIONS - GLOBAL REACH •</span>
+                        <span>OFF-MARKET TRANSACTIONS FOR DISCERNING COLLECTORS •</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu__item">
+          <a class="menu__item-link" href="" target="_blank">NEWS</a>
+          <div class="marquee">
+            <div class="marquee__inner-wrap">
+              <div class="marquee__inner" aria-hidden="true">
+                  <span>Hypercar reveals and global automotive trends •</span>
+                  <span>Inside the world’s most exclusive auction houses •</span>
+                  <span>Hypercar reveals and global automotive trends •</span>
+                  <span>Inside the world’s most exclusive auction houses •</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="menu__item">
+            <a class="menu__item-link" href="" target="_blank">OUR SHOWROOM</a>
+            <div class="marquee">
+              <div class="marquee__inner-wrap">
+               <div class="marquee__inner" aria-hidden="true">
+                  <span>World’s most trusted exotic vehicle authority •</span>
+                  <span>Visit our flagship gallery for a private viewing •</span>
+                  <span>World’s most trusted exotic vehicle authority •</span>
+                  <span>Visit our flagship gallery for a private viewing •</span>
+               </div>
+              </div>
+            </div>
+        </div>
+        <div class="menu__item">
+            <a class="menu__item-link" href="" target="_blank">Get In Touch</a>
+            <div class="marquee">
+              <div class="marquee__inner-wrap">
+               <div class="marquee__inner" aria-hidden="true">
+                  <span>TikTok</span>
+                  <span><i class="fa-brands fa-tiktok"></i></span>
+                  <span>Instagram</span>
+                  <span><i class="fa-brands fa-instagram"></i></span>
+                  <span>Telegram</span>
+                   <span><i class="fa-brands fa-telegram"></i></span>
+                  <span>YouTube</span>
+                  <span><i class="fa-brands fa-youtube"></i></span>
+                  <span>TikTok</span>
+                  <span><i class="fa-brands fa-tiktok"></i></span>
+                  <span>Instagram</span>
+                  <span><i class="fa-brands fa-instagram"></i></span>
+                  <span>Telegram</span>
+                   <span><i class="fa-brands fa-telegram"></i></span>
+                  <span>YouTube</span>
+                  <span><i class="fa-brands fa-youtube"></i></span>
+                  <span>TikTok</span>
+                  <span><i class="fa-brands fa-tiktok"></i></span>
+                  <span>Instagram</span>
+                  <span><i class="fa-brands fa-instagram"></i></span>
+                  <span>Telegram</span>
+                   <span><i class="fa-brands fa-telegram"></i></span>
+                  <span>YouTube</span>
+                  <span><i class="fa-brands fa-youtube"></i></span>
+                  <span>TikTok</span>
+                  <span><i class="fa-brands fa-tiktok"></i></span>
+                  <span>Instagram</span>
+                  <span><i class="fa-brands fa-instagram"></i></span>
+                  <span>Telegram</span>
+                   <span><i class="fa-brands fa-telegram"></i></span>
+                  <span>YouTube</span>
+                  <span><i class="fa-brands fa-youtube"></i></span>
+               </div>
+              </div>
+            </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="col col-1">
+      <div class="links">
+        <div class="link"><a href="#"></a></div>
+        <div class="link"><a href="#"></a></div>
+        <div class="link"><a href="#"></a></div>
+        <div class="link"><a href="#"></a></div>
+      </div>
+      <div class="video-wrapper">
+        <video id="video-wrapper" autoplay muted playsinline loop preload="metadata" webkit-playsinline poster="./assets/VIP.png">
+          <source src="./assets/SBM.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div class="col col-2">
+      <div class="socials">
+        <div class="sub-col">
+          <p>STOUB BIZ motors</p>
+          <p>Sheikh Zayed Road</p>
+          <p>Dubai</p>
+          <p>UAE</p>
+          <br />
+          <a href="https://www.stoubbiz.ae/" ><p>stoubbiz.ae</p></a>
+        </div>
+        <div class="sub-col">
+          <a href="https://www.instagram.com/stoubbizmotors/" target="_blank"><p>Instagram</p></a>
+          <a href="https://www.youtube.com/@StoubBizMotorsLLC/" target="_blank"><p>YouTube</p></a>
+          <a href="https://www.linkedin.com/company/stoub-biz-motors-llc/" target="_blank"><p>LinkedIn</p></a>
+          <a href="https://www.facebook.com/stoubbizdubai" target="_blank"><p>Facebook</p></a>
+          <br />
+          <a title="Call Us" href="tel:04-2220414" target="_blank"><p> 04-2220414</p></a>
+        </div>
+      </div>
+      <div class="header">
+        <h1>stoubbiz</h1>
+        <div id="signa">Motors</div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="max-txt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <filter id="HoverDistort">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="10" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <filter id="HoverDistort-max">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="2" stitchTiles="stitch" result="turb">
+          <animate attributeName="seed" from="2" to="50" dur="5s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="33" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <script type="module" src="main.js" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/index.cad48f07.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    function magneticEffect(element, strength = 40, easing = 0.15, invert = false) {
+      let mouseX = 0, mouseY = 0;
+      let targetX = 0, targetY = 0;
+
+      const parent = element.closest(".logo");
+
+      // save the base transform from CSS
+      const baseTransform = window.getComputedStyle(element).transform === "none" 
+        ? "" 
+        : window.getComputedStyle(element).transform;
+
+      parent.addEventListener("mousemove", e => {
+        const rect = parent.getBoundingClientRect();
+        const relX = e.clientX - (rect.left + rect.width / 2);
+        const relY = e.clientY - (rect.top + rect.height / 2);
+
+        targetX = (relX / rect.width) * strength * (invert ? -1 : 1);
+        targetY = (relY / rect.height) * strength * (invert ? -1 : 1);
+      });
+
+      parent.addEventListener("mouseleave", () => {
+        targetX = 0;
+        targetY = 0;
+      });
+
+      function animate() {
+        mouseX += (targetX - mouseX) * easing;
+        mouseY += (targetY - mouseY) * easing;
+
+        // Apply GSAP offsets **in addition to** the original CSS transform
+        gsap.set(element, {
+          transform: `${baseTransform} translate(${mouseX}px, ${mouseY}px)`
+        });
+      requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // Apply separately
+    magneticEffect(document.querySelector(".logo img"), 35, 0.15);       // img with base centering + rotation
+    magneticEffect(document.querySelector(".logo a"), 20, 0.12, true);   // text opposite movement
+  </script>
+<!--
+  <script>
+    function lockViewport() {
+      // Reset scroll position
+      window.scrollTo(0, 0);
+    
+      // Force body to exactly match viewport size
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+      document.body.style.left = '0';
+      document.body.style.width = window.innerWidth + 'px';
+      document.body.style.height = window.innerHeight + 'px';
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.width = '100%';
+      document.documentElement.style.height = '100%';
+    }
+    
+    // Apply immediately and on resize
+    lockViewport();
+    window.addEventListener('resize', lockViewport);
+  </script>
+-->
+
+</body>
+</html>
