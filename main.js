@@ -228,52 +228,63 @@ function hyperMotion3D() {
 
 // ================= SCROLL ================= //
 ScrollTrigger.create({
-  trigger: document.body,
+  trigger: ".hero-scene",
   start: "top top",
   end: "bottom bottom",
-  scrub: true,
+  scrub: 1,
+
   onUpdate: self => {
 
     const progress = self.progress;
-    const step = Math.floor(progress * 4);
 
     let targetX = 0;
     let targetScale = 1;
 
-    // ❌ Disable left/right on mobile
     if (!isMobile) {
-      if (step === 1) {
+
+      if (progress > 0.08 && progress <= 0.25) {
         targetX = -400;
         targetScale = 0.5;
       }
 
-      if (step === 2) {
+      else if (progress > 0.25 && progress <= 0.42) {
         targetX = 400;
         targetScale = 0.5;
       }
 
-      if (step === 3) {
+      else if (progress > 0.42 && progress <= 0.59) {
         targetX = -400;
         targetScale = 0.5;
       }
-    } else {
-      // ✅ Mobile: only scale, no horizontal movement
-      if (step >= 1 && step <= 3) {
+
+      else if (progress > 0.59 && progress <= 0.76) {
+        targetX = 400;
         targetScale = 0.5;
       }
-    }
 
-    if (progress < 0.05 || progress > 0.95) {
-      targetX = 0;
-      targetScale = 1;
+      else if (progress > 0.76 && progress <= 0.93) {
+        targetX = -400;
+        targetScale = 0.5;
+      }
+
+    } else {
+      
+      // ✅ Mobile: only scale, no horizontal movement
+      
+      if (progress > 0.08 && progress < 0.93) {
+        targetScale = 0.5;
+      }
+
     }
 
     gsap.to(scrollState, {
       x: targetX,
       scale: targetScale,
-      duration: 0.4,
-      ease: "power2.out"
+      duration: 0.8,
+      ease: "expo.out",
+      overwrite: true
     });
+
   }
 });
 
@@ -316,6 +327,7 @@ document.querySelectorAll(".content-marquee-inner").forEach((el) => {
 });
 
 // ================= FOOTER MARQUEE ================= //
+
 gsap.registerPlugin(ScrollTrigger);
 
 // turn each <p> into a marquee structure
@@ -344,9 +356,13 @@ document.querySelectorAll(".footer-marquee-inner").forEach((el) => {
 
   gsap.to(el, {
     x: -width,
-    duration: 120,
     ease: "none",
-    repeat: -1
+    scrollTrigger: {
+      trigger: el,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1
+    }
   });
 });
 
@@ -389,6 +405,79 @@ screenElement.addEventListener('mouseleave', () => {
     pointerEvents: "auto",
     duration: 0.2,
     ease: "power2.out"
+  });
+});
+
+/** ========== STATS SECTION ========== **/
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+  // 1. The Number Counter (Runs once on load)
+  const statNumbers = document.querySelectorAll('.stat-num');
+  
+  statNumbers.forEach(stat => {
+    const targetValue = parseInt(stat.getAttribute('data-target'), 10);
+    
+    gsap.to(stat, {
+      innerHTML: targetValue,
+      duration: 2.5,
+      snap: { innerHTML: 1 }, // Forces integers (no decimals)
+      ease: "power3.out",     // Starts fast, slows down smoothly
+    });
+  });
+
+  // 2. The Constant Idle Animation (Runs endlessly)
+  // This creates a subtle, asynchronous breathing effect across the stats
+  gsap.to('.stat-card', {
+    y: -8,                     // Moves up slightly
+    duration: 3,               // Slow, luxurious pace
+    ease: "sine.inOut",        // Butter-smooth easing
+    stagger: {
+      each: 0.4,               // Offsets the start time for each card
+      yoyo: true,              // Reverses the animation
+      repeat: -1               // Loops infinitely
+    }
+  });
+});
+
+/** ========== BRANDS MARQUEE ========== **/
+
+const track = document.querySelector(".track");
+
+// duplicate for seamless loop
+track.innerHTML += track.innerHTML;
+
+const distance = track.scrollWidth / 2;
+
+// main animation
+const tween = gsap.to(track, {
+  x: -distance,
+  duration: 60,
+  ease: "none",
+  repeat: -1
+});
+
+// smooth hover pause/resume (no snapping)
+const speed = { value: 1 };
+
+gsap.ticker.add(() => {
+  tween.timeScale(speed.value);
+});
+
+// hover interactions
+track.addEventListener("mouseenter", () => {
+  gsap.to(speed, {
+    value: 0,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+});
+
+track.addEventListener("mouseleave", () => {
+  gsap.to(speed, {
+    value: 1,
+    duration: 1.2,
+    ease: "power3.out"
   });
 });
 

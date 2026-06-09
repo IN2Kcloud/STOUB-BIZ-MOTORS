@@ -29,110 +29,197 @@
   </div>
 
   <canvas id="grid-bg"></canvas>
+
+  <div class="hero-scene">
   
-  <div class="LP">
-    
-    <div class="screen-bg"></div>
-    <div class="screen-view">
-      <div class="screen-video" aria-hidden="true">
-        <video id="screen-video-wrapper" autoplay muted playsinline loop preload="metadata" webkit-playsinline poster="./assets/logo.svg">
-          <source src="./assets/SBM.mp4" type="video/mp4" />
-        </video>
+    <div class="LP">
+
+      <div class="marquee-wrapper desktop-only">
+          <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="dsmsvg">
+            <defs>
+              <path id="path43" d="M 150,150 L 650,150 L 650,450 L 150,450 Z" />
+              <mask id="cornerMask">
+                <rect x="0" y="0" width="800" height="600" fill="white" />
+                <g fill="black" filter="url(#blurFilter)">
+                  <circle cx="150" cy="150" r="70" /> <circle cx="650" cy="150" r="70" /> 
+                  <circle cx="650" cy="450" r="70" /> <circle cx="150" cy="450" r="70" /> 
+                </g>
+                <filter id="blurFilter"><feGaussianBlur stdDeviation="15" /></filter>
+              </mask> 
+            </defs>
+            <use href="#path43" fill="none" stroke="#fff" stroke-width="20" />
+            <text fill="#fff" font-family="'American', 'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="18" font-weight="regular" letter-spacing="5" dy="-15" mask="url(#cornerMask)">
+              <textPath class="marquee-path" href="#path43" startOffset="0%">
+                Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
+              </textPath>
+            </text>
+          </svg>
       </div>
+      <div class="marquee-wrapper mobile-only">
+          <svg viewBox="0 0 600 800" preserveAspectRatio="xMidYMid meet" class="msmsvg">
+            <defs>
+              <path id="path34" d="M 100,100 L 500,100 L 500,700 L 100,700 Z" />
+              <mask id="cornerMaskMobile">
+                <rect x="0" y="0" width="600" height="800" fill="white" />
+                <g fill="black" filter="url(#blurFilterMobile)">
+                  <circle cx="100" cy="100" r="70" /> <circle cx="500" cy="100" r="70" /> 
+                  <circle cx="500" cy="700" r="70" /> <circle cx="100" cy="700" r="70" /> 
+                </g>
+                <filter id="blurFilterMobile"><feGaussianBlur stdDeviation="15" /></filter>
+              </mask> 
+            </defs>
+            <use href="#path34" fill="none" stroke="#fff" stroke-width="15" />
+            <text fill="#fff" font-family="'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="32" font-weight="bold" dy="-15" mask="url(#cornerMaskMobile)">
+              <textPath class="marquee-path" href="#path34" startOffset="0%">
+                Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
+              </textPath>
+            </text>
+          </svg>
+      </div>
+
+      <div class="screen-bg"></div>
+      <div class="screen-view">
+        <div class="screen-video" aria-hidden="true">
+          <video id="screen-video-wrapper" autoplay muted playsinline loop preload="metadata" webkit-playsinline poster="./assets/logo.svg">
+            <source src="./assets/SBM.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="marquee-trial-II">
+        <div class="marquee-trial-content-II">
+          <span>
+              &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+              &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+              &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
+              you can't download the experience &nbsp;
+          </span>
+        </div>
+      </div>
+	    <div class="marquee-trial">
+        <div class="marquee-trial-content">
+          <span>
+              &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+              &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
+              &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
+              you can't download the experience &nbsp;
+          </span>
+        </div>
+      </div>
+
     </div>
   
-    <div class="marquee-wrapper desktop-only">
-        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" class="dsmsvg">
-          <defs>
-            <path id="path43" d="M 150,150 L 650,150 L 650,450 L 150,450 Z" />
-            <mask id="cornerMask">
-              <rect x="0" y="0" width="800" height="600" fill="white" />
-              <g fill="black" filter="url(#blurFilter)">
-                <circle cx="150" cy="150" r="70" /> <circle cx="650" cy="150" r="70" /> 
-                <circle cx="650" cy="450" r="70" /> <circle cx="150" cy="450" r="70" /> 
-              </g>
-              <filter id="blurFilter"><feGaussianBlur stdDeviation="15" /></filter>
-            </mask> 
-          </defs>
-          <use href="#path43" fill="none" stroke="#fff" stroke-width="20" />
-          <text fill="#fff" font-family="'American', 'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="18" font-weight="regular" letter-spacing="5" dy="-15" mask="url(#cornerMask)">
-            <textPath class="marquee-path" href="#path43" startOffset="0%">
-              Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
-            </textPath>
-          </text>
-        </svg>
-    </div>
-    <div class="marquee-wrapper mobile-only">
-        <svg viewBox="0 0 600 800" preserveAspectRatio="xMidYMid meet" class="msmsvg">
-          <defs>
-            <path id="path34" d="M 100,100 L 500,100 L 500,700 L 100,700 Z" />
-            <mask id="cornerMaskMobile">
-              <rect x="0" y="0" width="600" height="800" fill="white" />
-              <g fill="black" filter="url(#blurFilterMobile)">
-                <circle cx="100" cy="100" r="70" /> <circle cx="500" cy="100" r="70" /> 
-                <circle cx="500" cy="700" r="70" /> <circle cx="100" cy="700" r="70" /> 
-              </g>
-              <filter id="blurFilterMobile"><feGaussianBlur stdDeviation="15" /></filter>
-            </mask> 
-          </defs>
-          <use href="#path34" fill="none" stroke="#fff" stroke-width="15" />
-          <text fill="#fff" font-family="'LEMONMILK-Regular', 'Roboto', sans-serif" font-size="32" font-weight="bold" dy="-15" mask="url(#cornerMaskMobile)">
-            <textPath class="marquee-path" href="#path34" startOffset="0%">
-              Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • Exclusive Cars for Exceptional Clients • STOUB BIZ MOTORS • 
-            </textPath>
-          </text>
-        </svg>
-    </div>
-    
-    <div class="marquee-trial-II">
-      <div class="marquee-trial-content-II">
-        <span>
-            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
-            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
-            &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
-            you can't download the experience &nbsp;
-        </span>
+    <section class="content-section right">
+      <div class="content-inner">
+        <h2>Precision Engineering <span>Engineering</span> </h2>
+        <p> • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation&nbsp;</p>
       </div>
+    </section>
+    
+    <section class="content-section left">
+      <div class="content-inner">
+        <h2>Unmatched Collection <span>Collection</span> </h2>
+        <p> • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary&nbsp;</p>
+      </div>
+    </section>
+    
+    <section class="content-section right">
+      <div class="content-inner">
+        <h2>Global Reach <span>Reach</span> </h2>
+        <p> • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world&nbsp;</p>
+      </div>
+    </section>
+  
+    <section class="content-section left">
+      <div class="content-inner">
+        <h2>Curated Selection<span>Selection</span></h2>
+        <p>
+          • Every automobile is hand-selected through a rigorous acquisition process • Limited production models • Collector-grade specifications • Verified provenance • Bespoke configurations • Every automobile is hand-selected through a rigorous acquisition process •
+        </p>
+      </div>
+    </section>
+  
+    <section class="content-section right last">
+      <div class="content-inner">
+        <h2>Rare Machines<span>Machines</span></h2>
+        <p>
+          • Ferrari • Lamborghini • McLaren • Rolls-Royce • Bentley • Aston Martin • Porsche GT models • The world's most desirable machines assembled under one roof • Ferrari • Lamborghini • McLaren •
+        </p>
+      </div>
+    </section>
+  
+    <footer class="footer">
+      <div class="footer-inner">
+        <h2>STOUB BIZ <span>Motors</span></h2>
+        <p>• Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved&nbsp;</p>
+      </div>
+    </footer>
+  
+  </div>
+
+  <section class="stats-section" aria-label="Company Statistics">
+    <div class="stats-container">
+      
+      <article class="stat-card" data-animate="stat">
+        <div class="stat-value">
+          <span class="stat-num" data-target="20">20</span>
+          <span class="stat-symbol">+</span>
+        </div>
+        <h3 class="stat-label">Years Experience</h3>
+      </article>
+  
+      <article class="stat-card" data-animate="stat">
+        <div class="stat-value">
+          <span class="stat-num" data-target="500">500</span>
+          <span class="stat-symbol">+</span>
+        </div>
+        <h3 class="stat-label">Luxury Vehicles Delivered</h3>
+      </article>
+  
+      <article class="stat-card" data-animate="stat">
+        <div class="stat-value">
+          <span class="stat-num" data-target="50">50</span>
+          <span class="stat-symbol">+</span>
+        </div>
+        <h3 class="stat-label">Countries Served</h3>
+      </article>
+  
     </div>
-	  <div class="marquee-trial">
-      <div class="marquee-trial-content">
-        <span>
-            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
-            &nbsp; STOUB BIZ MOTORS specializes in procuring the finest luxury motorcars in the world &nbsp; • &nbsp; With over 20 years of experience in the sport, exotic, luxury, and supercar business &nbsp; • 
-            &nbsp; impulse &nbsp; • &nbsp; independent online showroom &nbsp; • &nbsp;
-            you can't download the experience &nbsp;
-        </span>
+  </section>
+  
+  <div class="brands-section">
+    <div class="references fade-sides">
+      <div class="track">
+        <div class="ref"><img src="./assets/brands/Aston-Martin.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/audi.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/bmw.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/cadillac.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/Chevrolet.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/ferrari.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/lamborghini.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/Land-Rover.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/maserati.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/McLaren.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/Mercedes-Benz.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/porsche.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/Rolls-Royce.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/subaru.webp"></img></div>
+        <div class="ref"><img src="./assets/brands/Volkswagen.webp"></img></div>
       </div>
     </div>
   </div>
 
-  <section class="content-section right">
-    <div class="content-inner">
-      <h2>Precision Engineering <span>Engineering</span> </h2>
-      <p> • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation • Every vehicle at STOUB BIZ Motors represents the highest level of performance, luxury, and innovation&nbsp;</p>
-    </div>
-  </section>
+  <section class="closing-section">
+    <h2>
+      THE WORLD'S MOST
+      <br>
+      EXCEPTIONAL AUTOMOBILES
+    </h2>
   
-  <section class="content-section left">
-    <div class="content-inner">
-      <h2>Unmatched Collection <span>Collection</span> </h2>
-      <p> • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary • From hypercars to rare collectibles, we curate only the extraordinary&nbsp;</p>
-    </div>
+    <p>
+      Available by appointment.
+    </p>
   </section>
-  
-  <section class="content-section right last">
-    <div class="content-inner">
-      <h2>Global Reach <span>Reach</span> </h2>
-      <p> • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world • Delivering elite automotive experiences across the world&nbsp;</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <h2>STOUB BIZ <span>Motors</span></h2>
-      <p> • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved • Sheikh Zayed Road • Dubai • UAE © 2020 STOUB BIZ Motors — All Rights Reserved&nbsp;</p>
-    </div>
-  </footer>
 
 
   <!--MENU-->
