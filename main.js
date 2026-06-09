@@ -410,34 +410,62 @@ screenElement.addEventListener('mouseleave', () => {
 
 /** ========== STATS SECTION ========== **/
 
-document.addEventListener("DOMContentLoaded", () => {
-    
-  // 1. The Number Counter (Runs once on load)
-  const statNumbers = document.querySelectorAll('.stat-num');
-  
-  statNumbers.forEach(stat => {
-    const targetValue = parseInt(stat.getAttribute('data-target'), 10);
-    
-    gsap.to(stat, {
-      innerHTML: targetValue,
-      duration: 2.5,
-      snap: { innerHTML: 1 }, // Forces integers (no decimals)
-      ease: "power3.out",     // Starts fast, slows down smoothly
-    });
-  });
+gsap.registerPlugin(ScrollTrigger);
 
-  // 2. The Constant Idle Animation (Runs endlessly)
-  // This creates a subtle, asynchronous breathing effect across the stats
-  gsap.to('.stat-card', {
-    y: -8,                     // Moves up slightly
-    duration: 3,               // Slow, luxurious pace
-    ease: "sine.inOut",        // Butter-smooth easing
-    stagger: {
-      each: 0.4,               // Offsets the start time for each card
-      yoyo: true,              // Reverses the animation
-      repeat: -1               // Loops infinitely
+document.querySelectorAll('.stat-num').forEach(stat => {
+
+  const targetValue = parseInt(stat.dataset.target);
+
+  gsap.fromTo(stat,
+    { innerHTML: 0 },
+    {
+      innerHTML: targetValue,
+      snap: { innerHTML: 1 },
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".stats-section",
+        start: "top 70%",
+        once: true
+      }
     }
-  });
+  );
+
+});
+
+gsap.from(".stat-card", {
+  y: 100,
+  opacity: 0,
+  rotateX: -40,
+  stagger: 0.15,
+  duration: 1.5,
+  ease: "expo.out",
+  scrollTrigger: {
+    trigger: ".stats-section",
+    start: "top 70%"
+  }
+});
+
+gsap.to(".stats-bg-text", {
+  xPercent: -15,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".stats-section",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1
+  }
+});
+
+gsap.to(".stat-card", {
+  y: -20,
+  stagger: {
+    each: 0.2,
+    repeat: -1,
+    yoyo: true
+  },
+  duration: 4,
+  ease: "sine.inOut"
 });
 
 /** ========== BRANDS MARQUEE ========== **/
@@ -478,6 +506,42 @@ track.addEventListener("mouseleave", () => {
     value: 1,
     duration: 1.2,
     ease: "power3.out"
+  });
+});
+
+// ================= CLOSING MARQUEE ================= //
+
+gsap.registerPlugin(ScrollTrigger);
+
+// turn each <p> into a marquee structure
+document.querySelectorAll(".closing-marquee-container").forEach((p) => {
+  const text = p.textContent.trim();
+
+  // create marquee wrapper
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("closing-marquee");
+
+  const inner = document.createElement("div");
+  inner.classList.add("closing-marquee-inner");
+
+  // duplicate text for infinite loop
+  inner.innerHTML = `
+    <span>${text}</span>
+    <span>${text}</span>
+  `;
+
+  wrapper.appendChild(inner);
+  p.replaceWith(wrapper);
+});
+
+document.querySelectorAll(".closing-marquee-inner").forEach((el) => {
+  const width = el.scrollWidth / 2;
+
+  gsap.to(el, {
+    x: -width,
+    duration: 120,
+    ease: "none",
+    repeat: -1
   });
 });
 
