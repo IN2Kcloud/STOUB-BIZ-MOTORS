@@ -110,15 +110,21 @@ svg { width: 100%; height: auto; display: block; filter: drop-shadow(0px 0px 10p
 /* ========== CLOSING SECTION ========== */
 .closing-section { background-color: #000; min-height: 100vh; display: flex; flex-direction: column; justify-content: end;padding-bottom: 1rem; align-items: center; text-align: center; position: relative; z-index: 11; }
 .closing-header {width: 100%; display: flex;justify-content: center;align-items: center;gap: 20px; padding: 20px;}
-.closing-section h2 { position: relative; width: 48%; font-family: 'American'; font-size: clamp(4rem, 10vw, 14rem); line-height: .8; color: #fff; }
-.closing-section h2 span {font-family: 'Heisenberg', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 8rem;font-weight: bold;line-height: .9;width: 100%;letter-spacing: -2px; text-transform: initial; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg); color: #6ABD45;filter: drop-shadow(0px 0px 5px #6ABD45);}
-.closing-section p { /*background: #6ABD45; filter:drop-shadow(0 0 5px #fff);*/ position: relative; width: 48%; color: #fff;border: 2px solid #fff; padding: 10px; font-family: 'LEMONMILK-Bold', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 1.6rem; text-transform: uppercase; text-align: justify; text-align-last: justify; }
+.closing-section h2 { position: relative; width: 48%; font-family: 'American'; font-size: clamp(8rem, 14vw, 16rem); line-height: .8; color: #fff; }
+.closing-section h2 span {font-family: 'Heisenberg', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 10rem;font-weight: bold;line-height: .9;width: 100%;letter-spacing: -2px; text-transform: initial; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg); color: #6ABD45;filter: drop-shadow(0px 0px 5px #6ABD45);}
+.closing-section p { /*background: #6ABD45; filter:drop-shadow(0 0 5px #fff);*/ position: relative; width: 48%; color: #fff;border: 2px solid #fff; padding: 10px; font-family: 'LEMONMILK-Bold', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 2.2rem; text-transform: uppercase; text-align: justify; text-align-last: justify; }
 .closing-section img {width:60%;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg); mix-blend-mode: screen;}
 .closing-marquee { display: flex;align-items: center;overflow: hidden; white-space: nowrap; width: 100%; margin-top: 1rem; /*height: 20vh;*/ background: #6ABD45;filter: drop-shadow(0px 0px 30px #6ABD45);}
 .closing-marquee-inner { display: flex;align-items: center; gap: 4rem; width: max-content; }
 .closing-marquee-inner span { font-family: 'LEMONMILK-Bold', 'LEMONMILK-Regular', 'Roboto', sans-serif; font-size: 4rem; line-height: 2; letter-spacing: 0.05em; color: #000; /*text-shadow: 0 0 0.05em #000;*/ white-space: nowrap; }
-.signa {position: relative; font-family: 'Heisenberg', 'American', 'LEMONMILK-Bold', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 3rem;font-weight: bold; color: #fff;filter: drop-shadow(0px 0px 5px #fff); transform:rotate(-10deg);margin-top: 3rem;margin-bottom: 2rem;}
+.signa {position: relative; font-family: 'Heisenberg', 'American', 'LEMONMILK-Bold', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 4rem;font-weight: bold; color: #fff;filter: drop-shadow(0px 0px 5px #fff); transform:rotate(-10deg);margin-top: 3rem;margin-bottom: 2rem;}
 /*.signa span {font-family: 'Heisenberg', 'LEMONMILK-Regular', 'Roboto', sans-serif;font-size: 4rem;font-weight: bold; color: #6ABD45;filter: drop-shadow(0px 0px 5px #6ABD45);  position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%) rotate(-10deg);}*/
+@media screen and (max-width:2000px) { 
+    .closing-section h2 { font-size: clamp(4rem, 10vw, 14rem);}
+    .closing-section h2 span {font-size: 8rem;}
+    .closing-section p {font-size: 1.6rem;}
+    .signa {font-size: 3rem;}
+}
 @media screen and (max-width:1000px) { 
     .closing-header {flex-direction: column-reverse;}
     .closing-section h2 {width: 100%; }
