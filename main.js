@@ -415,7 +415,20 @@ gsap.registerPlugin(ScrollTrigger);
 document.querySelectorAll('.stat-num').forEach(stat => {
 
   const targetValue = parseInt(stat.dataset.target);
+  
+  function runCounter() {
 
+    stat.innerHTML = 0;
+
+    gsap.to(stat, {
+      innerHTML: targetValue,
+      duration: 2,
+      snap: { innerHTML: 1 },
+      ease: "power3.out"
+    });
+
+  }
+  
   gsap.fromTo(stat,
     { innerHTML: 0 },
     {
@@ -426,7 +439,8 @@ document.querySelectorAll('.stat-num').forEach(stat => {
       scrollTrigger: {
         trigger: ".stats-section",
         start: "top 70%",
-        once: true
+        onEnter: runCounter,
+        onEnterBack: runCounter
       }
     }
   );
